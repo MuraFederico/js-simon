@@ -6,6 +6,7 @@ const arrNumbers = [];
 const AMOUNT_OF_NUMBERS = 5;
 let score = 0;
 
+
 /////////// GENERAZIONE NUMERI ///////////
 
 for (let i = 0; i < AMOUNT_OF_NUMBERS; i++) {
@@ -17,9 +18,26 @@ for (let i = 0; i < AMOUNT_OF_NUMBERS; i++) {
 
 console.log(arrNumbers)
 
+/////////// TIMER PER IL TEMPO RESTANTE ///////////
+
+const countDown = setInterval(timer,1000);
+let timeCount = 28;
+
+function timer() {
+    eleTimer.innerHTML = `timer: ${timeCount}`
+    
+    
+    if(timeCount == 0) {
+        
+        clearInterval(countDown)
+    }
+    timeCount--
+}
+
+
+
 setTimeout(delayedActions, 30000);
 
-setInterval(timer,1000);
 
 function delayedActions() {
     /////////// RIMOZIONE NUMERI DALLA PAGINA ///////////
@@ -36,6 +54,8 @@ function delayedActions() {
         }
     }
 
+    eleTimer.innerHTML = ''
+
     if(score == AMOUNT_OF_NUMBERS) {
         output.innerHTML = (`Complimenti! hai ricordato tutti i numeri!`);
 
@@ -48,10 +68,4 @@ function delayedActions() {
 }
 
 
-function timer() {
-    for (let timeCount = 30; timeCount <= 0; timeCount--) {
-        eleTimer.innerHTML = `timer: ${timeCount}`
-        
-    }
 
-}
