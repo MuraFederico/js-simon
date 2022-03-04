@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.container > div {
+.container > * {
     margin: 300px auto;
     font-size: 30px;
 }
