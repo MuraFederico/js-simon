@@ -35,5 +35,14 @@ function delayedActions() {
             score += 1;
         }
     }
-    output.innerHTML = (`hai ricordato correttamente ${score} numeri`)
+
+    if(score == AMOUNT_OF_NUMBERS) {
+        output.innerHTML = (`Complimenti! hai ricordato tutti i numeri!`);
+
+    }else if(score == 1) {
+        output.innerHTML = (`hai ricordato correttamente ${score} numero`);
+
+    }else {
+        output.innerHTML = (`hai ricordato correttamente ${score} numeri`);
+    }
 }
