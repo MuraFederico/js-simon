@@ -15,3 +15,7 @@
     margin: 300px auto;
     font-size: 30px;
 }
+
+.hide {
+    display: none;
+}
