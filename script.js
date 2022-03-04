@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 const output = document.querySelector('.output');
-
+const eleTimer = document.querySelector('#timer');
 
 const arrNumbers = [];
 const AMOUNT_OF_NUMBERS = 5;
@@ -19,7 +19,7 @@ console.log(arrNumbers)
 
 setTimeout(delayedActions, 30000);
 
-
+setInterval(timer,1000);
 
 function delayedActions() {
     /////////// RIMOZIONE NUMERI DALLA PAGINA ///////////
@@ -45,4 +45,13 @@ function delayedActions() {
     }else {
         output.innerHTML = (`hai ricordato correttamente ${score} numeri`);
     }
+}
+
+
+function timer() {
+    for (let timeCount = 30; timeCount <= 0; timeCount--) {
+        eleTimer.innerHTML = `timer: ${timeCount}`
+        
+    }
+
 }
